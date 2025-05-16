@@ -1,18 +1,25 @@
 package com.library.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/")
+@Controller
+//@RequestMapping("")
 public class HomeController {
 
-	@GetMapping("/home")
-	private void sample() {
+	@GetMapping("/")
+	public String getIndex() {
 		System.out.println("library ");
+		return "index";
+		
+  }
+	
+		
+		
 	}
 	
 	
 		
-}
+
