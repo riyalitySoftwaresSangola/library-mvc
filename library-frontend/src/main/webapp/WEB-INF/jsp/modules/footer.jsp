@@ -4,7 +4,7 @@
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 		<footer class="page-footer">
-			<p class="mb-0">Copyright © 2023. All right reserved.</p>
+			<p class="mb-0">-------***------</p>
 		</footer>
 	</div>
 	<!--end wrapper-->
@@ -27,6 +27,20 @@
 	<script src="resources/assets/js/index3.js"></script>
 	<!-- App JS -->
 	<script src="resources/assets/js/app.js"></script>
+	
+	<!-- jQuery (Required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- MetisMenu JS -->
+<script src="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.js"></script>
+
+<!-- Initialize MetisMenu -->
+<script>
+  $(document).ready(function() {
+    $('#menu').metisMenu();
+  });
+</script>
+	
 </body>
 
 

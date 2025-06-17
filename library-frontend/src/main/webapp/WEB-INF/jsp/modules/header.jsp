@@ -1,3 +1,8 @@
+<%
+    String role = (String) session.getAttribute("role");
+%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -29,6 +34,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
 	<link href="resources/assets/css/app.css" rel="stylesheet"/>
 	<link href="resources/assets/css/icons.css" rel="stylesheet"/>
+	
+
+
+<!-- MetisMenu CSS -->
+<link href="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css" rel="stylesheet">
+
 
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="resources/assets/css/dark-theme.css"/>
@@ -42,35 +53,106 @@
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		<div class="sidebar-wrapper" data-simplebar="true">
-			<div class="sidebar-header">
-				<div>
-					<h4 class="logo-text">My Birth Day</h4>
-				</div>
-				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i>
-				</div>
-			 </div>
-			<!--navigation-->
-			<ul class="metismenu" id="menu">
-				<li>
-					<a href="home">
-						<div><i class='bx bx-home-alt'></i></div>
-						<div class="menu-title">Dashboard</div>
-					</a>
-					<ul>
-						<li> <a href="addUserForm"><i class='bx bx-radio-circle'></i>Add User</a>
-						</li>
-						<li> <a href="#"><i class='bx bx-radio-circle'></i>Add Birth Day</a>
-						</li>
-						<li> <a href="getAllBirthdaysList"><i class='bx bx-radio-circle'></i>View Birthdays</a>
-						</li>
-					</ul>
-				</li>
-				
-			</ul>
-			<!--end navigation-->
-		</div>
-		<!--end sidebar wrapper -->
+	<div class="sidebar-wrapper" data-simplebar="true">
+	    <div class="sidebar-header">
+	        <div>
+	            <h4 class="logo-text">Library System</h4>
+	        </div>
+	        <div class="toggle-icon ms-auto"><i class='bx bx-arrow-back'></i></div>
+	    </div>
+	
+	    <!--navigation-->
+	    <ul class="metismenu" id="menu">
+
+    <!-- Dashboard (All roles) -->
+    <li>
+        <a href="#">
+            <div><i class='bx bx-home-alt'></i></div>
+            <div class="menu-title">Dashboard</div>
+        </a>
+    </li>
+
+    <!-- Add Librarian (Only for ADMIN) -->
+    <% if ("admin".equals(role)) { %>
+    <li>
+        <a href="librarianButton">
+            <div><i class='bx bx-user-plus'></i></div>
+            <div class="menu-title">Add Librarian</div>
+        </a>
+    </li>
+    <% } %>
+
+    <!-- Add User (Only for ADMIN) -->
+    <% if ("admin".equals(role) || "librarian".endsWith(role)) { %>
+    <li>
+        <a href="#">
+            <div><i class='bx bx-user'></i></div>
+            <div class="menu-title">Add User</div>
+        </a>
+    </li>
+    <% } %>
+
+    <!-- Books Menu (Only for ADMIN and LIBRARIAN) -->
+    <% if ("admin".equals(role) || "librarian".equals(role)) { %>
+    <li>
+        <a href="javascript:;" class="has-arrow">
+            <div><i class='bx bx-book'></i></div>
+            <div class="menu-title">Books</div>
+        </a>
+        <ul>
+            <li><a href="AddBooks">Add Book</a></li>
+            <li><a href="#">Update Book</a></li>
+            <li><a href="#">Delete Book</a></li>
+            <li><a href="#">Show All Books</a></li>
+        </ul>
+    </li>
+    <% } %>
+    
+    
+     <!-- Books Menu (Only for ADMIN and LIBRARIAN) -->
+    <% if ("admin".equals(role) || "librarian".equals(role)) { %>
+    <li>
+        <a href="javascript:;" class="has-arrow">
+            <div><i class='bx bx-book'></i></div>
+            <div class="menu-title">Categories</div>
+        </a>
+        <ul>
+             <li><a href="#">Fiction</a></li>
+        <li><a href="#">Science</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Comics</a></li>
+        </ul>
+    </li>
+    <% } %>
+    
+    
+    
+
+    <!-- Menus for All Roles -->
+    <li>
+        <a href="#">
+            <div><i class='bx bx-book-bookmark'></i></div>
+            <div class="menu-title">Booked Books</div>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <div><i class='bx bx-book-open'></i></div>
+            <div class="menu-title">Available Books</div>
+        </a>
+    </li>
+
+</ul>
+
+	    <!--end navigation-->
+	</div>
+	<!--end sidebar wrapper -->
+
+
+
+
 		<!--start header -->
 		<header>
 			<div class="topbar d-flex align-items-center">
