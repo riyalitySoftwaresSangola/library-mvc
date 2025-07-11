@@ -75,15 +75,20 @@
     <!-- Add Librarian (Only for ADMIN) -->
     <% if ("admin".equals(role)) { %>
     <li>
-        <a href="librarianButton">
-            <div><i class='bx bx-user-plus'></i></div>
+         <a href="javascript:;" class="has-arrow">
+            <div><i class='bx bx-book'></i></div>
             <div class="menu-title">Add Librarian</div>
         </a>
+    <ul>
+            <li><a href="AddLibrarian">Add Librarian</a></li>
+            
+            <li><a href="LibrarianViwe">Show All info</a></li>
+        </ul>
     </li>
     <% } %>
 
     <!-- Add User (Only for ADMIN) -->
-    <% if ("admin".equals(role) || "librarian".endsWith(role)) { %>
+    <% if ("admin".equals(role) || "librarian".equals(role)) { %>
     <li>
         <a href="#">
             <div><i class='bx bx-user'></i></div>

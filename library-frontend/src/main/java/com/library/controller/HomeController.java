@@ -29,6 +29,11 @@ public class HomeController {
 		
 		
 	}
+	@GetMapping("/showLibrarian")
+	public String addLibrarian() {
+		return "showLibririyan";
+		
+	}
 	
 	
 	
