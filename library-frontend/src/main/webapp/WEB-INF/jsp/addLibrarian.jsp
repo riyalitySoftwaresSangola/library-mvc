@@ -1,149 +1,224 @@
-<jsp:include page="modules/header.jsp"/>	
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Add Librarian</title>
+    <meta charset="UTF-8">
+    <title>Add Librarian</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
 
-<style type="text/css">
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 50px;
-    min-height: 100vh;
-}
+        .container {
+            background: #fff;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 850px;
+        }
 
-form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 600px;
-    margin: 50px auto; /* Centers the form horizontally and adds vertical spacing */
-}
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #444;
-}
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
 
-#btn-sub {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
 
-#btn-sub:hover {
-    background-color: #0056b3;
-}
+        input, select {
+            padding: 8px 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
 
-h4 {
-    margin-top: 30px;
-    color: #333;
-    text-align: center;
-}
-</style>
+        .form-actions {
+            margin-top: 30px;
+            text-align: center;
+        }
 
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<form action="addLibrarian" method="post"> 
 
-    <!-- Basic Info -->
-    <label>User Name</label>
-    <input type="text" name="username" placeholder="Enter User Name">
+<div class="container">
+    <h2>Add Librarian</h2>
+    <form action="Librarian" method="post">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" name="username" required>
+            </div>
 
-    <label>Email</label>
-    <input type="text" name="email" placeholder="Enter Email">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
 
-    <label>Phone Number</label>
-    <input type="text" name="phone_number" placeholder="Enter Phone Number">
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="phoneNumber" required>
+            </div>
 
-    <label>Password</label>
-    <input type="text" name="password" placeholder="Enter Password">
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" required>
+            </div>
 
-    <label>Role</label>
-    <select name="role">
-        <option>librarian</option>
-    </select>
+            <div class="form-group">
+                <label>Role</label>
+                <input type="text" name="role" value="Librarian" readonly>
+            </div>
 
-    <!-- Submit Button -->
-    <button type="submit" id="btn-sub">Submit</button>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="fullName">
+            </div>
 
-    <!-- Separator -->
-    <hr style="margin-top: 30px; margin-bottom: 30px;">
+            <div class="form-group">
+                <label>Education</label>
+                <input type="text" name="education">
+            </div>
 
-    <!-- Additional Librarian Details -->
-    <h4>Additional Librarian Information</h4>
+            <div class="form-group">
+                <label>Qualification</label>
+                <input type="text" name="qualification">
+            </div>
 
-    <!-- Personal Details -->
-    <label>Date of Birth</label>
-    <input type="date" name="dob">
+            <div class="form-group">
+                <label>Experience</label>
+                <input type="text" name="experience">
+            </div>
 
-    <label>Gender</label>
-    <select name="gender">
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
-    </select>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" name="address">
+            </div>
 
-    <label>Address</label>
-    <input type="text" name="address" placeholder="Full Address">
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" name="city">
+            </div>
 
-    <label>Aadhar Number</label>
-    <input type="text" name="aadhar" placeholder="Aadhar Number">
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" name="state">
+            </div>
 
-    <!-- Education -->
-    <label>Highest Qualification</label>
-    <input type="text" name="qualification" placeholder="e.g. M.Lib, B.Ed.">
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" name="country">
+            </div>
 
-    <label>University</label>
-    <input type="text" name="university" placeholder="University Name">
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input type="text" name="postalCode">
+            </div>
 
-    <label>Year of Passing</label>
-    <input type="text" name="yearOfPassing" placeholder="e.g. 2022">
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" name="dateOfBirth">
+            </div>
 
-    <!-- Payment -->
-    <label>Bank Account Number</label>
-    <input type="text" name="bankAccount">
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
 
-    <label>IFSC Code</label>
-    <input type="text" name="ifsc">
+            <div class="form-group">
+                <label>Aadhar Number</label>
+                <input type="text" name="aadhar">
+            </div>
 
-    <label>PAN Number</label>
-    <input type="text" name="pan">
+            <div class="form-group">
+                <label>University</label>
+                <input type="text" name="university">
+            </div>
 
-    <label>Monthly Salary</label>
-    <input type="text" name="salary" placeholder="₹">
+            <div class="form-group">
+                <label>Year of Passing</label>
+                <input type="text" name="yearOfPassing">
+            </div>
 
-    <label>Payment Mode</label>
-    <select name="paymentMode">
-        <option>Bank Transfer</option>
-        <option>Cash</option>
-        <option>Cheque</option>
-    </select>
+            <div class="form-group">
+                <label>Bank Account Number</label>
+                <input type="text" name="bankAccount">
+            </div>
 
-</form>
+            <div class="form-group">
+                <label>IFSC Code</label>
+                <input type="text" name="ifsc">
+            </div>
+
+            <div class="form-group">
+                <label>PAN Number</label>
+                <input type="text" name="pan">
+            </div>
+
+            <div class="form-group">
+                <label>Monthly Salary</label>
+                <input type="text" name="salary">
+            </div>
+
+            <div class="form-group">
+                <label>Payment Mode</label>
+                <input type="text" name="paymentMode">
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Add Librarian</button>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
-
-<jsp:include page="modules/footer.jsp"/>	

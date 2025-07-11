@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class LibrarianResponseDTO {
 
-public class LibrarianDTO {
 	
 	private int id;
 	private String username;
@@ -28,6 +28,8 @@ public class LibrarianDTO {
     private String country;
     private String postalCode;
     private String dateOfBirth;
-	
-	
+    
+ 
+
+
 }
