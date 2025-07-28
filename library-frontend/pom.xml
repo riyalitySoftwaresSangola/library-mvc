@@ -49,6 +49,12 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
 
         <!-- Embedded Tomcat as provided for WAR -->
         <dependency>
@@ -56,6 +62,13 @@
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
+        
+        <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>springloaded</artifactId>
+    <version>1.2.8.RELEASE</version>
+</dependency>
+        
 
         <!-- Test (optional) -->
         <dependency>

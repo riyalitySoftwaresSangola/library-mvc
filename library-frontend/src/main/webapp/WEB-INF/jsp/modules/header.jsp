@@ -90,14 +90,20 @@
     <!-- Add User (Only for ADMIN) -->
     <% if ("admin".equals(role) || "librarian".equals(role)) { %>
     <li>
-        <a href="#">
-            <div><i class='bx bx-user'></i></div>
-            <div class="menu-title">Add User</div>
+       <a href="javascript:;" class="has-arrow">
+            <div><i class='bx bx-book'></i></div>
+            <div class="menu-title">User Info</div>
         </a>
+        
+         <ul>
+            <li><a href="AddUser">Add User</a></li>
+            
+            <li><a href="getallStudents">Show All info</a></li>
+        </ul>
     </li>
     <% } %>
 
-    <!-- Books Menu (Only for ADMIN and LIBRARIAN) -->
+    <!-- Books Menu (Only for ADMIN and LIBRARIAN) -->   
     <% if ("admin".equals(role) || "librarian".equals(role)) { %>
     <li>
         <a href="javascript:;" class="has-arrow">
