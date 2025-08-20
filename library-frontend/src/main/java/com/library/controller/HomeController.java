@@ -18,10 +18,7 @@ public class HomeController {
 		
 		
   }
-	@GetMapping("/AddBooks")
-	public String addBooks() {
-		return "addBooks";
-	}
+	
 	
 	@GetMapping("/librarianButton")
 	public String librarianbutton(){
