@@ -8,7 +8,5 @@ public class LibraryFrontendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LibraryFrontendApplication.class, args);
 	}
-	
-	
 
 }
