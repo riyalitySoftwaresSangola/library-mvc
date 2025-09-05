@@ -19,29 +19,7 @@ public class ServiceImplimentation implements UserServiceInterface {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	@Override
-	public SignupValidationResponseDto signup(UserDto user) {
-		
-		final String url = "http://localhost:8181/SignUpController/sigunup"; // ✅ Add http://
-
-	    // 1. Set headers
-	    HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.APPLICATION_JSON); // application/json
-
-	    // 2. Create HttpEntity with headers + body
-	    HttpEntity<UserDto> request = new HttpEntity<>(user, headers);
-
-	    // 3. Send POST request to Boot controller
-	    SignupValidationResponseDto response = restTemplate.postForObject(url, request, SignupValidationResponseDto.class);
-
-	    // 4. Return response from backend
-	    return response;
-
-			
-		
-		
-
-	}
+	
 
 	@Override
 	public UserResponceDto loginpage(UserLoginDto userLoginDto) {
@@ -57,6 +35,14 @@ public class ServiceImplimentation implements UserServiceInterface {
 		
 		System.out.println(httploginresponce);
 	   return httploginresponce;
+	}
+
+
+
+	@Override
+	public SignupValidationResponseDto signup(UserDto user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

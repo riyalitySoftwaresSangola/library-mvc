@@ -48,9 +48,8 @@ public class StudentServiceImplimention implements StudentinfoInterface  {
 	    List<StudentResponceDto> responcelist = Arrays.asList(dtoArray);
 
 	    // Print each student data
-//	    System.out.println("---- All Student Data ----");
 	    for (StudentResponceDto student : responcelist) {
-//	        System.out.println(student);
+
 	    }
 
 	    return responcelist;

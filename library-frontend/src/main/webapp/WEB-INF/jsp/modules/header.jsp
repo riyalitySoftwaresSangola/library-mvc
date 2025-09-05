@@ -112,9 +112,7 @@
         </a>
         <ul>
             <li><a href="AddBooks">Add Book</a></li>
-            <li><a href="#">Update Book</a></li>
-            <li><a href="#">Delete Book</a></li>
-            <li><a href="#">Show All Books</a></li>
+            <li><a href="getAllBooks">Show All Books</a></li>
         </ul>
     </li>
     <% } %>

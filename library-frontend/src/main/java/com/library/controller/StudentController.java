@@ -51,25 +51,22 @@ public class StudentController {
 
 		System.out.println(id);
 		StudentResponceDto student = studentinfoInterface.getid(id);
-		
-		System.out.println("the student data" +student);
-		System.out.println("the student data" +student.getId());
+
 		model.addAttribute("student", student);
-		System.out.println("this is the mvc student controller "+student);
-		
+
 		return "viewStudent";
 	}
-	
+
 	@PostMapping("/updateStudent")
 	public String updateStudent(@ModelAttribute StudentResponceDto studentDto) {
-	    studentinfoInterface.updateStudent(studentDto);
-	    return "redirect:/getallStudents"; // go back to list after update
+		studentinfoInterface.updateStudent(studentDto);
+		return "redirect:/getallStudents"; // go back to list after update
 	}
-	
-	 @PostMapping("/deletestudent")
-	    public String deleteStudent(@RequestParam("id") int id) {
-		 studentinfoInterface.softDeleteStudent(id);
-	        return "redirect:/getallStudents"; // refresh list after delete
-	    }
+
+	@PostMapping("/deletestudent")
+	public String deleteStudent(@RequestParam("id") int id) {
+		studentinfoInterface.softDeleteStudent(id);
+		return "redirect:/getallStudents"; // refresh list after delete
+	}
 
 }
